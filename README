@@ -1,0 +1,13 @@
+RBE - Resource Based Economy
+
+RBE is an implementation of the Venus Project created by Jaque Fresco and Roxanne Meadows. (http://www.thevenusproject.com)
+It fuses the ideas of Handpassed (http://www.handpassed.com) and the Venus Project into a dynamic ad hoc delivery system, which tracks the available resources, needs,
+and knowledge needed to solve the problems of the people.
+
+How it works:
+-------------
+There are three important aspects to this software.
+1) Human need tracking
+2) Resource tracking
+3) Path finding or ad hoc delivery
+4) Education
