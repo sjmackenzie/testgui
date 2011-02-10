@@ -5,7 +5,7 @@ run:
 	@ozengine bin/src/Rbe.ozf
 
 clean:
-	@rm -fr bin/*
+	@rm -fr bin/* src/*.ozf src/*.exe
 
 relclean:
 	@rm -rf rel/*
