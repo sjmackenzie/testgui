@@ -1,15 +1,13 @@
-all:  		compile2
+all:
+	@ozmake -vn --builddir='bin' --srcdir='src' --bindir='rel'
 
-compile2: 	$ozc -c src/rbe.oz -o bin/rbe.ozf
+run:
+	@ozengine bin/src/Rbe.ozf
 
-compile: 	$(foreach source,$^, $ozc -c source -o bin/source) 
+clean:
+	@rm -fr bin/*
 
-rel:		compile generate
+relclean:
+	@rm -rf rel/*
 
-generate:	cp bin/*.ozf rel/
-
-clean: 		rm -fr bin/*
-
-distclean: 	clean relclean
-
-relclean:	rm -rf rel/*
+distclean: clean relclean
