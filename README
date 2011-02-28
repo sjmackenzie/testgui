@@ -1,12 +1,24 @@
 RBE - Resource Based Economy
 
 RBE is an implementation of the Venus Project created by Jaque Fresco and Roxanne Meadows. (http://www.thevenusproject.com)
-It fuses the ideas of Handpassed (http://www.handpassed.com) and the Venus Project into a dynamic ad hoc delivery system, which tracks the available resources, needs, and knowledge needed to solve the problems of the people.
+It fuses the ideas of Handpassed (http://www.handpassed.com) into the Venus Project creating a dynamic ad hoc delivery system, which tracks available resources, needs, and knowledge designed to solve the _needs_ of the people.
 
 How it works:
 -------------
-There are four important aspects to this software.
+There are four important aspects of this software.
 1) Human need tracking
-2) Resource tracking
-3) Path finding or ad hoc delivery
+2) Resource searching
+3) Ad hoc delivery
 4) Education
+
+- Human need tracking -
+A list used to accumulate the needs of your community where your community is connected to you via a set of commonly shared locations 3 or 4 layers deep. Needs vary for the basic life essentials like drinking water, all the way up to music lessons.
+
+- Resource searching -
+This is an itinerary of all donated items and their life cycles in the system, be it a hammer, a frying pan, a guitar. These are the items that will circlate the community. As no one owns the items, they will circulate till it is worn out.
+
+- Ad hoc delivery -
+A person is connected to everyone in the world via a certain amout of degrees, many say six degrees. This RBE graph connects people via shared frequently visited locations. These locations might form chains that could be used to circulate donated items.
+
+- Education -
+Listed needs not being met automatically create a workshop item that prospective class holders may select and deliver. Should one offer a class, one then needs to thoroughly research that topic in order for the class to be conducted in an appropriate manner. These classes bond the community, rally the people around solving their community's needs, solidify knowledge and lastly the knowledge is circulated to people all over the world to replicate.

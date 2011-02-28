@@ -1,5 +1,5 @@
 all:
-	@ozmake -vn --builddir='bin' --srcdir='src' --bindir='rel'
+	@ozmake -vn --builddir='bin'  --bindir='rel'
 
 run:
 	@ozengine bin/src/Rbe.ozf
