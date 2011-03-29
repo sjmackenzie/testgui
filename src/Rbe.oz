@@ -12,42 +12,46 @@ define
 	       )
 	     lr(glue: nswe
 		td(glue: nswe
-		   tbbutton(text: "Make a Request" glue:nwe)
+		   tbbutton(text:"Make a Request" bg:white glue:nwe)
 		   lrline(glue:nwe)
-		   label(text:"Your Networks Needs" glue:nwe)
+		   label(text:"Your Networks Needs" bg:white glue:nwe)
 		   listbox(init:List
 			   handle:L1
 			   return:R1
+			   bg:white
 			   tdscrollbar:true
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   tbbutton(text: "Share Something" glue:nwe)
+		   tbbutton(text: "Share Something" bg:white glue:nwe)
 		   lrline(glue:nwe)
-		   label(text:"Packages to help pass" glue:nwe)
+		   label(text:"Packages to help pass" bg:white glue:nwe)
 		   listbox(init:List
 			   handle:L2
 			   return:R2
+			   bg:white
 			   tdscrollbar:true
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   tbbutton(text: "Post a Package" glue:nwe)
+		   tbbutton(text: "Post a Package" bg:white glue:nwe)
 		   lrline(glue:nwe)
-		   label(text:"Items in hand" glue:nwe)
+		   label(text:"Items in hand" bg:white glue:nwe)
 		   listbox(init:List
 			   handle:L3
 			   return:R3
+			   bg:white
 			   tdscrollbar:true
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   tbbutton(text: "Give a class" glue:nwe)
+		   tbbutton(text: "Give a class" bg:white glue:nwe)
 		   lrline(glue:nwe)
-		   label(text:"Take a class" glue:nwe)
+		   label(text:"Take a class" bg:white glue:nwe)
 		   listbox(init:List
 			   handle:L4
 			   return:R4
+			   bg:white
 			   tdscrollbar:true
 			   glue:nswe)
 		  )
