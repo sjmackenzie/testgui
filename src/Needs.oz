@@ -1,6 +1,9 @@
 functor
 import
 export
+   'init':Init
 define
-   skip
+   fun {Init}
+      [n e e d s]
+   end
 end
