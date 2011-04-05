@@ -28,26 +28,29 @@ define
 	     lr(glue: nwe
 		label(handle: StatusLabel glue:nwe)
 	       )
-	     lr(button(text:"Make a Request" bg:white glue:nwe)
-		button(text: "Share Something" bg:white glue:nwe)
-		button(text: "Post a Package" bg:white glue:nwe)
-		button(text: "Give a class" bg:white glue:nwe)
-		button(text: "Locations" bg:white glue:nwe)
+	     lr(button(text:"Make a Request"  glue:nwe)
+		button(text: "Share Something" glue:nwe)
+		button(text: "Post a Package"  glue:nwe)
+		button(text: "Give a class" glue:nwe)
+		button(text: "Locations"  glue:nwe)
 	       )
 	     lr(
 		td(text(tdscrollbar:true
 			init:"This is a text widget"
 			handle:TextHandle
+			bg:white
 			return:TR
-			glue:we
+			glue:nswe
 		       )
-		   lr(entry(init:"type here"
+		   lr(glue:w
+		      entry(init:"type here"
 			    handle:InputHandle
 			    return:IR
-			    glue:we
+			    bg:white
+			    glue:nswe
 			   )
 		      button(text:"send"
-			     glue:w
+			     glue:nswe
 			     action:proc{$} {TextHandle insert({InputHandle get($)})} end
 			    )
 		      )
@@ -55,8 +58,7 @@ define
 		  )
 	     lr(glue: nswe
 		td(glue: nswe
-		   lrline(glue:nwe)
-		   label(text:"Your Networks Needs" bg:white glue:nwe)
+		   label(text:"Your Networks Needs" glue:nwe)
 		   listbox(init:{InitList network_needs}
 			   handle:L1
 			   return:R1
@@ -65,8 +67,7 @@ define
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   lrline(glue:nwe)
-		   label(text:"Packages to help pass" bg:white glue:nwe)
+		   label(text:"Packages to help pass" glue:nwe)
 		   listbox(init:{InitList help_pass}
 			   handle:L2
 			   return:R2
@@ -75,8 +76,7 @@ define
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   lrline(glue:nwe)
-		   label(text:"Items in hand" bg:white glue:nwe)
+		   label(text:"Items in hand"  glue:nwe)
 		   listbox(init:{InitList pkg_in_hand}
 			   handle:L3
 			   return:R3
@@ -85,8 +85,7 @@ define
 			   glue:nswe)
 		  )
 		td(glue: nswe
-		   lrline(glue:nwe)
-		   label(text:"Take a class" bg:white glue:nwe)
+		   label(text:"Take a class"  glue:nwe)
 		   listbox(init:{InitList take_class}
 			   handle:L4
 			   return:R4
@@ -101,7 +100,7 @@ define
    Window = {QTk.build Desc}
 
    proc {ShowStatus}
-      {StatusLabel set(bg: white text: "Handpassed")}
+      {StatusLabel set(text: "Handpassed")}
    end
 
    thread
