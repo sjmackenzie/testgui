@@ -5,6 +5,7 @@ import
    PackageFlow at 'PackageFlow.ozf'
    Needs at 'Needs.ozf'
    Request at 'Request.ozf'
+   Console at 'Console.ozf'
    QTk at 'x-oz://system/wp/QTk.ozf'
 
 define
@@ -25,22 +26,32 @@ define
    TextHandle TR
    InputHandle IR
    Desc = lr(title:"Handpassed - a resource based economy"
-	     tdspace(glue:ns width:10)
+	     tdspace(glue:ns width:20)
 	     tdrubberframe(glue:nswe
 			   td(glue:nswe
 			      lrspace(glue:we width:10)			      
 			      label(handle: StatusLabel glue:nwe)
 			      lrspace(glue:we width:10)
 			      lr(glue:we
-				 button(text:"Make a Request"  glue:nwe)
+				 button(text:"Make a Request"
+					action:RequestItem
+					glue:nwe)
 				 tdspace(glue:ns width:5)
-				 button(text:"Share Something" glue:nwe)
+				 button(text:"Share Something"
+					action:ShareItem					
+					glue:nwe)
 				 tdspace(glue:ns width:5)				 
-				 button(text:"Post a Package"  glue:nwe)
+				 button(text:"Post a Package"
+					action:PostItem
+					glue:nwe)
 				 tdspace(glue:ns width:5)
-				 button(text:"Give a class" glue:nwe)
+				 button(text:"Give a class"
+					action:GiveClass
+					glue:nwe)
 				 tdspace(glue:ns width:5)				 
-				 button(text:"Locations"  glue:nwe))
+				 button(text:"Locations"
+					action:ManageLocations
+					glue:nwe))
 			      lrspace(glue:we width:10)
 			      lr(glue:nswe
 				 td(glue:nswe
@@ -49,7 +60,7 @@ define
 					 handle:TextHandle
 					 bg:white
 					 return:TR
-					 glue:nswe)
+					 glue:nswe)			 
 				    lrspace(glue:we width:10)
 				    lr(glue:nwe
 				       entry(init:""
@@ -57,11 +68,13 @@ define
 					     return:IR
 					     bg:white
 					     glue:we)
-				 tdspace(glue:ns width:5)				       
+				       tdspace(glue:ns width:5)
 				       button(text:"send"
 					      glue:e
-					      action:proc{$} {TextHandle insert({InputHandle get($)})} end))))
-     			      lrspace(glue:we width:10))
+%					      action:proc{$} {InsertText {String.toAtom {InputHandle get($)}}} end ))))
+%					      action:proc{$} {TextHandle insert('end' {String.toAtom {InputHandle get($)}})} end))))
+					      action:proc{$} {TextHandle insert('end' {Console.input {String.toAtom {InputHandle get($)}}})} end))))					      
+			      tdspace(glue:we width:5))
 			   td(glue: nswe
 			      lr(glue: nswe
 				 td(glue: nswe
@@ -99,12 +112,36 @@ define
 					    bg:white
 					    tdscrollbar:true
 					    glue:nswe)))
-			      lrspace(glue:we width:10)))
-	     tdspace(glue:ns width:10))
+			      lrspace(glue:we width:20)))
+	     tdspace(glue:ns width:20))
    StatusLabel
 
    Window = {QTk.build Desc}
 
+   fun {InsertText Text}
+      {TextHandle insert('end'{Console.input Text})}
+   end
+
+   proc {RequestItem}
+      {TextHandle insert('end' "\nWhat do you wish to request form the community?")}
+   end
+   
+   proc {ShareItem}
+      {TextHandle insert('end' "\nWhat do you wish to share with the community?")}
+   end
+
+   proc {PostItem}
+      {TextHandle insert('end' "\nTo whom would you like to post this package?")}
+   end
+
+   proc {GiveClass}
+      {TextHandle insert('end' "\nBased on the needs of the people which class would you like to give?")}
+   end
+
+   proc {ManageLocations}
+      {TextHandle insert('end' "\nWould you like to add a location?")}
+   end
+   
    proc {ShowStatus}
       {StatusLabel set(text: "Handpassed")}
    end
