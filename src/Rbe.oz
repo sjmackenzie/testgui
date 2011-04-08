@@ -28,30 +28,40 @@ define
 	     tdspace(glue:ns width:10)
 	     tdrubberframe(glue:nswe
 			   td(glue:nswe
+			      lrspace(glue:we width:10)			      
 			      label(handle: StatusLabel glue:nwe)
+			      lrspace(glue:we width:10)
 			      lr(glue:we
 				 button(text:"Make a Request"  glue:nwe)
+				 tdspace(glue:ns width:5)
 				 button(text:"Share Something" glue:nwe)
+				 tdspace(glue:ns width:5)				 
 				 button(text:"Post a Package"  glue:nwe)
+				 tdspace(glue:ns width:5)
 				 button(text:"Give a class" glue:nwe)
+				 tdspace(glue:ns width:5)				 
 				 button(text:"Locations"  glue:nwe))
+			      lrspace(glue:we width:10)
 			      lr(glue:nswe
-				 td( glue:nswe
-				     text(tdscrollbar:true
-					  init:""
-					  handle:TextHandle
-					  bg:white
-					  return:TR
-					  glue:nswe)
-				     lr(glue:nwe
-					entry(init:""
-					      handle:InputHandle
-					      return:IR
-					      bg:white
-					      glue:we)
-					button(text:"send"
-					       glue:e
-					       action:proc{$} {TextHandle insert({InputHandle get($)})} end)))))
+				 td(glue:nswe
+				    text(tdscrollbar:true
+					 init:""
+					 handle:TextHandle
+					 bg:white
+					 return:TR
+					 glue:nswe)
+				    lrspace(glue:we width:10)
+				    lr(glue:nwe
+				       entry(init:""
+					     handle:InputHandle
+					     return:IR
+					     bg:white
+					     glue:we)
+				 tdspace(glue:ns width:5)				       
+				       button(text:"send"
+					      glue:e
+					      action:proc{$} {TextHandle insert({InputHandle get($)})} end))))
+     			      lrspace(glue:we width:10))
 			   td(glue: nswe
 			      lr(glue: nswe
 				 td(glue: nswe
@@ -62,6 +72,7 @@ define
 					    bg:white
 					    tdscrollbar:true
 					    glue:nswe))
+				 tdspace(glue:ns width:5)				 
 				 td(glue: nswe
 				    label(text:"Upstream" glue:nwe)
 				    listbox(init:{InitList help_pass}
@@ -70,6 +81,7 @@ define
 					    bg:white
 					    tdscrollbar:true
 					    glue:nswe))
+				 tdspace(glue:ns width:5)				 
 				 td(glue: nswe
 				    label(text:"In Hand"  glue:nwe)
 				    listbox(init:{InitList pkg_in_hand}
@@ -78,6 +90,7 @@ define
 					    bg:white
 					    tdscrollbar:true
 					    glue:nswe))
+				 tdspace(glue:ns width:5)				 
 				 td(glue: nswe
 				    label(text:"Take a class"  glue:nwe)
 				    listbox(init:{InitList take_class}
