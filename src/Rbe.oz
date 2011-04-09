@@ -22,9 +22,14 @@ define
       end
    end
 
+   Data=[name#"Roger"
+	 surname#"Rabbit"
+	 age#14]
+   
    L1 R1 L2 R2 L3 R3 L4 R4
    TextHandle TR
    InputHandle IR
+   P C V1={Console.widget Data} V2={Console.edit_widget Data}
    Desc = lr(title:"Handpassed - a resource based economy"
 	     tdspace(glue:ns width:20)
 	     tdrubberframe(glue:nswe
@@ -60,7 +65,14 @@ define
 					 handle:TextHandle
 					 bg:white
 					 return:TR
-					 glue:nswe)			 
+					 glue:nswe)
+				    td(
+				       placeholder(glue:nswe handle:P)
+				       checkbutton(text:"Edit" init:false handle:C
+						   action:
+						      proc{$}
+							 Old#New=if {C get($)} then V1#V2 else V2#V1 end
+						      in {New.set {Old.get}} {P set(New.handle)} end))				    
 				    lrspace(glue:we width:10)
 				    lr(glue:nwe
 				       entry(init:""
@@ -117,6 +129,7 @@ define
    StatusLabel
 
    Window = {QTk.build Desc}
+   {P set(V2.spec)} {P set(V1.spec)}
 
    fun {InsertText Text}
       {TextHandle insert('end'{Console.input Text})}
