@@ -31,11 +31,15 @@ define
       end
    end
 
-%  fun {WhichButton Selected}
-%     case Selected
-%    of _ then {SBH=SBV} end
-%    end
-% end
+   fun {WhichButton Selected}
+      case Selected
+      of request then {SBH=SBV}
+      [] share then {SBH=SBV}
+      [] post then {SBH=SBV}
+      [] classes then {SBH=SBV}
+      [] locations then {SBH=SBV}
+      end
+   end
 
    proc {InsertTextBox Text}
       {InputHandle insert('end'{Console.input Text})}
@@ -83,7 +87,7 @@ define
 					       bg:white
 					       return:TR
 					       glue:nswe)
-					  td(
+			 		  td(
 					     placeholder(glue:nswe handle:P)
 					     checkbutton(text:"Edit" init:false handle:C
 							 action:
@@ -95,6 +99,7 @@ define
 					  lrspace(glue:we width:10)
 					  lr(glue:nwe
 					     entry(init:""
+						   action:proc{$} {WhichButton {InputHandle get($)}}
 						   handle:InputHandle
 						   return:IR
 						   bg:white
