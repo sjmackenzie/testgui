@@ -9,6 +9,15 @@ import
    QTk at 'x-oz://system/wp/QTk.ozf'
 
 define
+   Data=[name#"Roger"
+	 surname#"Rabbit"
+	 age#14]
+   TextHandle TR
+   InputHandle IR
+   L1 R1 L2 R2 L3 R3 L4 R4
+   P C
+   SBH SBV
+
    fun {InitList WhichList}
       case WhichList
       of network_needs then
@@ -22,14 +31,20 @@ define
       end
    end
 
-   Data=[name#"Roger"
-	 surname#"Rabbit"
-	 age#14]
+%  fun {WhichButton Selected}
+%     case Selected
+%    of _ then {SBH=SBV} end
+%    end
+% end
 
-   L1 R1 L2 R2 L3 R3 L4 R4
-   TextHandle TR
-   InputHandle IR
-   P C
+   proc {InsertTextBox Text}
+      {InputHandle insert('end'{Console.input Text})}
+   end
+
+   proc {SetTextBox Text}
+      {InputHandle set({Console.input Text})}
+   end
+
    ConsoleView={Console.console_view Data}
    RequestView={Request.request_view Data}
    MainWindow = lr(title:"Handpassed - a resource based economy"
@@ -41,23 +56,23 @@ define
 				    lrspace(glue:we width:10)
 				    lr(glue:we
 				       button(text:"Make a Request"
-					      action:RequestItem
+					      action:proc{$} {SetTextBox request} end
 					      glue:nwe)
 				       tdspace(glue:ns width:5)
 				       button(text:"Share Something"
-					      action:ShareItem
+					      action:proc{$} {SetTextBox share} end
 					      glue:nwe)
 				       tdspace(glue:ns width:5)
 				       button(text:"Post a Package"
-					      action:PostItem
+					      action:proc{$} {SetTextBox post} end
 					      glue:nwe)
 				       tdspace(glue:ns width:5)
 				       button(text:"Give a class"
-					      action:GiveClass
+					      action:proc{$} {SetTextBox classes} end
 					      glue:nwe)
 				       tdspace(glue:ns width:5)
 				       button(text:"Locations"
-					      action:ManageLocations
+					      action:proc{$} {SetTextBox locations} end
 					      glue:nwe))
 				    lrspace(glue:we width:10)
 				    lr(glue:nswe
@@ -133,30 +148,6 @@ define
    Window = {QTk.build MainWindow}
    {P set(RequestView.spec)}
    {P set(ConsoleView.spec)}
-
-   fun {InsertText Text}
-      {TextHandle insert('end'{Console.input Text})}
-   end
-
-   proc {RequestItem}
-      {TextHandle insert('end' "\nWhat do you wish to request form the community?")}
-   end
-
-   proc {ShareItem}
-      {TextHandle insert('end' "\nWhat do you wish to share with the community?")}
-   end
-
-   proc {PostItem}
-      {TextHandle insert('end' "\nTo whom would you like to post this package?")}
-   end
-
-   proc {GiveClass}
-      {TextHandle insert('end' "\nBased on the needs of the people which class would you like to give?")}
-   end
-
-   proc {ManageLocations}
-      {TextHandle insert('end' "\nWould you like to add a location?")}
-   end
 
    proc {ShowStatus}
       {StatusLabel set(text: "Handpassed")}
