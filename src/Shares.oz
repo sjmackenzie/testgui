@@ -1,9 +1,9 @@
 functor
 import
 export
-   'classes_view':ClassesView
+   'share_view':ShareView
 define
-   fun {ClassesView Data}
+   fun {ShareView Data}
       Hd1 In={NewCell Data}
       HR={MakeRecord hr {Map Data fun {$ D#_} D end}}
    in

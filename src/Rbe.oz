@@ -4,8 +4,10 @@ import
    Education at 'Education.ozf'
    PackageFlow at 'PackageFlow.ozf'
    Needs at 'Needs.ozf'
+   Shares at 'Shares.ozf'
    Request at 'Request.ozf'
    Console at 'Console.ozf'
+   Location at 'Location.ozf'
    QTk at 'x-oz://system/wp/QTk.ozf'
 
 define
@@ -39,6 +41,11 @@ define
 
    ConsoleView={Console.console_view Data}
    RequestView={Request.request_view Data}
+   ShareView={Shares.share_view Data}
+   PostalView={PackageFlow.postal_view Data}
+%   ClassesView={Education.classes_view Data}
+   LocationView={Location.location_view Data}
+
    MainWindow = lr(title:"Handpassed - a resource based economy"
 		   tdspace(glue:ns width:20)
 		   tdrubberframe(glue:nswe
