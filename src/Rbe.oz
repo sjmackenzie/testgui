@@ -43,7 +43,7 @@ define
    RequestView={Request.request_view Data}
    ShareView={Shares.share_view Data}
    PostalView={PackageFlow.postal_view Data}
-%   ClassesView={Education.classes_view Data}
+   ClassesView={Education.classes_view Data}
    LocationView={Location.location_view Data}
 
    MainWindow = lr(title:"Handpassed - a resource based economy"
@@ -135,7 +135,8 @@ define
 				       tdspace(glue:ns width:5)
 				       td(glue: nswe
 					  label(text:"Take a class"  glue:nwe)
-					  listbox(init:{Education.init}
+					  listbox(
+					     init:{Education.init}
 						  handle:L4
 						  return:R4
 						  bg:white
