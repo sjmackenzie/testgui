@@ -18,15 +18,22 @@ define
    InputHandle IR
    L1 R1 L2 R2 L3 R3 L4 R4
    P C
-   SBH SBV
+
+   ConsoleView={Console.console_view Data}
+   RequestView={Request.request_view Data}
+   ShareView={Shares.share_view Data}
+   PostalView={PackageFlow.postal_view Data}
+   ClassesView={Education.classes_view Data}
+   LocationView={Location.location_view Data}
+   SBH
 
    proc {ScanEntry Selected}
       case Selected
-      of request then {SBH=SBV}
-      [] share then {SBH=SBV}
-      [] post then {SBH=SBV}
-      [] classes then {SBH=SBV}
-      [] locations then {SBH=SBV}
+      of request then {SBH=RequestView}
+      [] share then {SBH=ShareView}
+      [] post then {SBH=PostalView}
+      [] classes then {SBH=ClassesView}
+      [] locations then {SBH=LocationView}
 %	 [] _ then {
       end
    end
@@ -38,13 +45,6 @@ define
    proc {SetEntry Text}
       {InputHandle set({Console.input Text})}
    end
-
-   ConsoleView={Console.console_view Data}
-   RequestView={Request.request_view Data}
-   ShareView={Shares.share_view Data}
-   PostalView={PackageFlow.postal_view Data}
-   ClassesView={Education.classes_view Data}
-   LocationView={Location.location_view Data}
 
    MainWindow = lr(title:"Handpassed - a resource based economy"
 		   tdspace(glue:ns width:20)
@@ -74,6 +74,7 @@ define
 					      action:proc{$} {SetEntry locations} end
 					      glue:nwe))
 				    lrspace(glue:we width:10)
+				    placeholder(glue:nswe handle:SBH)
 				    lr(glue:nswe
 				       td(glue:nswe
 					  text(tdscrollbar:true
