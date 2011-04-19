@@ -83,8 +83,7 @@ define
 					       bg:white
 					       return:TR
 					       glue:nswe)
-			 		  td(
-					     placeholder(glue:nswe handle:P)
+			 		  td(placeholder(glue:nswe handle:P)
 					     checkbutton(text:"Edit" init:false handle:C
 							 action:
 							    proc{$}

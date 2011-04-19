@@ -9,7 +9,7 @@ define
       HR={MakeRecord hr {Map Data fun {$ D#_} D end}}
    in
       r(spec: {Adjoin
-		{List.toTuple td
+		{List.toTuple lr
 		 {Map Data fun {$ D#V}
 			      label(glue:we handle:HR.D text:D#":"#V) end}}
 		td(glue:nswe handle:Hd1)}
