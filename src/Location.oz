@@ -20,4 +20,10 @@ define
 	 get:fun {$} @In end)
    end
 
+   fun {AddLocation Data}
+      not_implemented
+   end
+   fun {RmLocation Data}
+      not_implemented
+   end
 end

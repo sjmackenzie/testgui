@@ -51,8 +51,6 @@ define
 		   tdrubberframe(glue:nswe
 				 td(glue:nswe
 				    lrspace(glue:we width:10)
-				    label(handle: StatusLabel glue:nwe)
-				    lrspace(glue:we width:10)
 				    lr(glue:we
 				       button(text:"Make a Request"
 					      action:proc{$} {SetEntry request} end
@@ -144,22 +142,12 @@ define
 						  glue:nswe)))
 				    lrspace(glue:we width:20)))
 		   tdspace(glue:ns width:20))
-   StatusLabel
 
    Window = {QTk.build MainWindow}
    {P set(RequestView.spec)}
    {P set(ConsoleView.spec)}
 
-   proc {ShowStatus}
-      {StatusLabel set(text: "Handpassed")}
-   end
-
-   thread
-      {ShowStatus}
-   end
-
 in
-   {ShowStatus}
    {Window show(wait:true)}
    {Application.exit 0}
 end
