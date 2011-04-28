@@ -34,7 +34,6 @@ define
       [] post then {SBH=PostalView}
       [] classes then {SBH=ClassesView}
       [] locations then {SBH=LocationView}
-%	 [] _ then {
       end
    end
 
@@ -43,6 +42,7 @@ define
    end
 
    proc {SetEntry Text}
+      {ScanEntry Text}
       {InputHandle set({Console.input Text})}
    end
 
